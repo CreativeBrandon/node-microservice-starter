@@ -19,8 +19,11 @@ app.engine('.hbs', exphbs({
 }))
 
 app.set('view engine', '.hbs')
-app.set('views', path.join(__dirname));
+app.set('views', path.join(__dirname))
 
-require('./pages').init(app);
+// Pages
+require('./pages').init(app)
+// Error Handlers
+require('./exceptions').init(app)
 
 module.exports = app
