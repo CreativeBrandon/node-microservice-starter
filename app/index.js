@@ -5,11 +5,20 @@ const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
 
 const config = require('../config')
+const mongoose = require('mongoose')
 const app = express()
 
 app.use(bodyParser.urlencoded({
   extended: false
 }))
+
+mongoose.connect('mongodb://localhost/test')
+let db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  // we're connected!
+  console.log.bind(console, 'connection successful');
+})
 
 app.engine('.hbs', exphbs({
   defaultLayout: 'layout',
