@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "experimentalDecorators": true
+    },
+    "files": [
+        "!node_mmodules",
+        "app/**/*.js",
+        "config/**/*.js",
+        "index.js"
+    ]
+}

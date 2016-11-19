@@ -12,6 +12,7 @@ app.use(bodyParser.urlencoded({
   extended: false
 }))
 
+mongoose.Promise = global.Promise
 mongoose.connect('mongodb://localhost/test')
 let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -32,7 +33,11 @@ app.set('views', path.join(__dirname))
 
 // Pages
 require('./pages').init(app)
-// Error Handlers
+
+// Migrations
+require('./migrations').init(app, db)
+
+// Error Handlers Last
 require('./exceptions').init(app)
 
 module.exports = app

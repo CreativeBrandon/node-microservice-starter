@@ -1,9 +1,6 @@
-function initHomePage(app){
-    app.get('/', renderHomePage);
+// Register pages
+function pages(app){
+    require('./homepage').init(app);
 }
 
-function renderHomePage(req, res, next){
-    res.render('pages/homePage');
-}
-
-module.exports = initHomePage;
+module.exports = pages;
