@@ -1,5 +1,7 @@
-const app = require('./app');
-const port = process.env.Port || 3000;
+const dotenv = require('dotenv').config()
+const config = require('./config')
+const app = require('./app')
+const port = config.port;
 
 app.listen(port, function(err){
     if(err){
