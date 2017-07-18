@@ -3,7 +3,7 @@ function initHomePage(app){
 }
 
 function renderHomePage(req, res, next){
-    res.render('pages/homePage');
+    res.render(__dirname + '/homepage');
 }
 
 module.exports = initHomePage;

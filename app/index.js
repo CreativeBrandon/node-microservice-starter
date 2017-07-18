@@ -23,7 +23,8 @@ app.set('view engine', '.hbs')
 app.set('views', path.join(__dirname))
 
 // Pages
-require('./pages').init(app)
+require('./features').init(app)
+
 // Error Handlers
 require('./exceptions').init(app)
 
