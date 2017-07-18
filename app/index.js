@@ -22,10 +22,9 @@ app.engine('.hbs', exphbs({
 app.set('view engine', '.hbs')
 app.set('views', path.join(__dirname))
 
-// Pages
+// App Modules
 require('./features').init(app)
-
-// Error Handlers
+require('./middleware').init(app)
 require('./exceptions').init(app)
 
 module.exports = app
