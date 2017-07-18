@@ -16,6 +16,9 @@ const config = {
     bcrypt: {
         saltRounds: process.env.BCRYPT_SALT_ROUNDS
     },
+    cors: {
+        whitelist: [process.env.CLIENT_URL]
+    },
     env: process.env.NODE_ENV,
     port: Number(process.env.APP_PORT) || 3000,
     secret: process.env.APP_KEY
